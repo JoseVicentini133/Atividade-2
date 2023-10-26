@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Informe o tamanho da matriz quadrada: ");
+    scanf("%d", &n);
+
+    int matriz[n][n];
+
+    printf("Informe os elementos da matriz:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    int somaDiagonalPrincipal = 0;
+    int somaDiagonalSecundaria = 0;
+
+    for (int i = 0; i < n; i++) {
+        somaDiagonalPrincipal += matriz[i][i];
+        somaDiagonalSecundaria += matriz[i][n - 1 - i];
+    }
+
+    // Exibir Reultados 
+    printf("Soma da Diagonal Principal: %d\n", somaDiagonalPrincipal);
+    printf("Soma da Diagonal Secundária: %d\n", somaDiagonalSecundaria);
+
+    return 0;
+}
